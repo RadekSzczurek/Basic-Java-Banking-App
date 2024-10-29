@@ -4,6 +4,7 @@ public class BankApp {
     public static void main(String[] args) {
         int accID;
         int depositValue;
+        int withdrawValue;
 
         accountsDAO acc = new accountsDAO();
         Transactions trans = new Transactions();
@@ -51,12 +52,17 @@ public class BankApp {
                     System.out.println("\n==== Wpłacanie gotowki ====");
                     System.out.print("Podaj id swojego konta: ");
                     accID = sc.nextInt();
-                    System.out.print("Podaj ilosc jaka chcesz wpłacic: ");
+                    System.out.print("Podaj ilosc jaka chcesz wpłacić: ");
                     depositValue = sc.nextInt();
                     trans.deposit(accID, depositValue);
                     break;
                 case 6:
-                    System.out.println("6");
+                    System.out.println("\n==== Wypłacanie gotowki ====");
+                    System.out.print("Podaj id swojego konta: ");
+                    accID = sc.nextInt();
+                    System.out.print("Podaj ilosc jaka chcesz wypłacić: ");
+                    withdrawValue = sc.nextInt();
+                    trans.withdraw(accID, withdrawValue);
                     break;
                 case 7:
                     System.out.println("Wyjście z programu.");
