@@ -4,7 +4,7 @@ public class accountsDAO {
     private static final Connection conn = DatabaseConnection.getConnection();
 
     public void addAcc(String imie,String nazwisko, int saldo){
-        String queryAdd = "INSERT INTO `accounts` (`imie`, `nazwisko`, `saldo`) VALUES (?, ?, ?)";
+        String queryAdd = "INSERT INTO accounts (`imie`, `nazwisko`, `saldo`) VALUES (?, ?, ?)";
         try (PreparedStatement pstmtAddAcc = conn.prepareStatement(queryAdd)) {
             pstmtAddAcc.setString(1, imie);
             pstmtAddAcc.setString(2, nazwisko);
@@ -17,14 +17,14 @@ public class accountsDAO {
     }
 
     public void showAllAcc(){
-        String queryShow = "SELECT * FROM `accounts`";
+        String queryShow = "SELECT * FROM accounts";
         try(PreparedStatement pstmtShowAcc = conn.prepareStatement(queryShow)) {
             ResultSet resultSet = pstmtShowAcc.executeQuery();
             while (resultSet.next()) {
                 System.out.println("ID: " + resultSet.getInt("id"));
                 System.out.println("Imię: " + resultSet.getString("imie"));
                 System.out.println("Nazwisko: " + resultSet.getString("nazwisko"));
-                System.out.println("Saldo: " + resultSet.getString("saldo") + "zł");
+                System.out.println("Saldo: " + resultSet.getInt("saldo") + "zł");
                 System.out.println("\n");
             }
         }
@@ -34,7 +34,7 @@ public class accountsDAO {
     }
 
     public void deleteAcc(int id){
-        String queryDelete = "DELETE FROM `accounts` WHERE id = ?;";
+        String queryDelete = "DELETE FROM accounts WHERE id = ?;";
         try(PreparedStatement pstmtDeleteAcc = conn.prepareStatement(queryDelete)){
             pstmtDeleteAcc.setInt(1,id);
             pstmtDeleteAcc.executeUpdate();
