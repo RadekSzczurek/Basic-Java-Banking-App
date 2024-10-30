@@ -34,14 +34,14 @@ Aplikacja oferuje następujące funkcjonalności:
 
 2. Skonfiguruj bazę danych MySQL:
 
-- Importuj bazę danych dostępną w repo
+ - Importuj bazę danych dostępną w repo
   
 3. Skonfiguruj połączenie z bazą danych w klasie DatabaseConnection
    
-   ```java
-    private static final String url = "jdbc:mysql://localhost:3306/bankJava";
-    private static final String user = "root";
-    private static final String password = "";
+    ```java
+     private static final String url = "jdbc:mysql://localhost:3306/bankJava";
+     private static final String user = "root";
+     private static final String password = "";
   - Ustaw te wartości na swoje dane
 
 5. Uruchom aplikację, wlączając klasę BankApp.
@@ -49,6 +49,3 @@ Aplikacja oferuje następujące funkcjonalności:
 ## Jak używać
 Po uruchomieniu aplikacji pojawi się menu, w którym możesz wybierać dostępne opcje, wpisując odpowiedni numer.
 Postępuj zgodnie z instrukcjami wyświetlanymi na ekranie.
-
-## Autor
-Radek
