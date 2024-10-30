@@ -5,6 +5,8 @@ public class BankApp {
         int accID;
         int depositValue;
         int withdrawValue;
+        int accToID;
+        int transferValue;
 
         accountsDAO acc = new accountsDAO();
         Transactions trans = new Transactions();
@@ -16,9 +18,9 @@ public class BankApp {
             System.out.println("2. Usuń konto bankowe");
             System.out.println("3. Pokaż wszystkie konta bankowe");
             System.out.println("\n==== MENU ====");
-            System.out.println("4. Przelej pieniadze");
-            System.out.println("5. Wplac pieniadze");
-            System.out.println("6. Wyplac pieniadze");
+            System.out.println("4. Przelej pieniądze");
+            System.out.println("5. Wpłać pieniądze");
+            System.out.println("6. Wypłać pieniądze");
             System.out.println("7. Wyjdź");
             System.out.print("Wybierz numer -> ");
             int choice = sc.nextInt();
@@ -37,7 +39,7 @@ public class BankApp {
                     break;
                 case 2:
                     System.out.println("\n==== Usuwanie konta bankowego ====");
-                    System.out.print("Podaj id konta do usuniecia: ");
+                    System.out.print("Podaj ID konta do usunięcia: ");
                     accID = sc.nextInt();
                     acc.deleteAcc(accID);
                     break;
@@ -46,21 +48,28 @@ public class BankApp {
                     acc.showAllAcc();
                     break;
                 case 4:
-                    System.out.println("4");
+                    System.out.println("\n==== Przelew gotówki ====");
+                    System.out.print("Podaj ID swojego konta: ");
+                    accID = sc.nextInt();
+                    System.out.print("Podaj ID konta, na które chcesz przelać gotówkę: ");
+                    accToID = sc.nextInt();
+                    System.out.print("Podaj kwotę do przelania: ");
+                    transferValue = sc.nextInt();
+                    trans.transfer(accID, accToID, transferValue);
                     break;
                 case 5:
-                    System.out.println("\n==== Wpłacanie gotowki ====");
-                    System.out.print("Podaj id swojego konta: ");
+                    System.out.println("\n==== Wpłacanie gotówki ====");
+                    System.out.print("Podaj ID swojego konta: ");
                     accID = sc.nextInt();
-                    System.out.print("Podaj ilosc jaka chcesz wpłacić: ");
+                    System.out.print("Podaj kwotę do wpłaty: ");
                     depositValue = sc.nextInt();
                     trans.deposit(accID, depositValue);
                     break;
                 case 6:
-                    System.out.println("\n==== Wypłacanie gotowki ====");
-                    System.out.print("Podaj id swojego konta: ");
+                    System.out.println("\n==== Wypłacanie gotówki ====");
+                    System.out.print("Podaj ID swojego konta: ");
                     accID = sc.nextInt();
-                    System.out.print("Podaj ilosc jaka chcesz wypłacić: ");
+                    System.out.print("Podaj kwotę do wypłaty: ");
                     withdrawValue = sc.nextInt();
                     trans.withdraw(accID, withdrawValue);
                     break;
