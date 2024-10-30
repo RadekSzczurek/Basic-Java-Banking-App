@@ -37,11 +37,13 @@ Aplikacja oferuje następujące funkcjonalności:
 - Importuj bazę danych dostępną w repo
   
 3. Skonfiguruj połączenie z bazą danych w klasie DatabaseConnection
+   
    ```java
     private static final String url = "jdbc:mysql://localhost:3306/bankJava";
     private static final String user = "root";
     private static final String password = "";
--Ustaw te wartości na swoje dane
+  - Ustaw te wartości na swoje dane
+
 5. Uruchom aplikację, wlączając klasę BankApp.
 
 ## Jak używać
