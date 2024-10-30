@@ -30,7 +30,7 @@ Aplikacja oferuje następujące funkcjonalności:
 1. Sklonuj to repozytorium na swój komputer:
 
    ```bash
-   git clone https://github.com/twoja_nazwa_uzytkownika/BankApp.git
+   git clone https://github.com/RadekSzczurek/Basic-Java-Banking-App
 
 2. Skonfiguruj bazę danych MySQL:
 
